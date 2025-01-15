@@ -11,7 +11,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <TravelList />
         <Routes>
           <Route>
             <Route index element={<MainPage />} />
