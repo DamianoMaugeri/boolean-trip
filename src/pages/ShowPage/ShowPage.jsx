@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import viaggi from "../../data/viaggi";
 
 export default function ShowPage() {
@@ -11,7 +11,7 @@ export default function ShowPage() {
                 <div>
                     <h1>{viaggioFiltrato[0].destinazione}</h1>
                     <p>{viaggioFiltrato[0].descrizione}</p>
-
+                    <Link to={"/"}>Torna ai viaggi</Link>
                     <h2>Partecipanti:</h2>
                     <ul>
                         {viaggioFiltrato[0].partecipanti.map((partecipante, i) => (
