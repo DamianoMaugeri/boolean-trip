@@ -16,6 +16,17 @@ const Searchbar = () => {
     );
   };
 
+  const buttonClick = () => {
+    setSearchResults(
+      viaggi.filter((viaggio) => {
+        return viaggio.destinazione
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      }
+      )
+    );
+  }
+
   return (
     <div>
       <input
@@ -29,6 +40,7 @@ const Searchbar = () => {
           <li key={viaggio.id}>{viaggio.destinazione}</li>
         ))}
       </ul>
+      <button onClick={buttonClick}>Cerca</button>
     </div>
   );
 };
