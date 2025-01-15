@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./TravelList.module.css";
 import viaggi from "../data/viaggi";
+import { Link } from "react-router-dom";
 
 export default function TravelList() {
-  function handleButtonClick(destinazione) {
-    alert(`Hai cliccato su ${destinazione}`);
+  function handleButtonClick(idViaggio) {
+
   }
 
   return (
@@ -19,12 +20,9 @@ export default function TravelList() {
             <strong>Ritorno:</strong> {viaggio.dataRitorno}
           </p>
           <p>{viaggio.descrizione}</p>
-          <button
-            className={styles.button}
-            onClick={() => handleButtonClick(viaggio.destinazione)}
-          >
-            Dettagli
-          </button>
+
+          <Link className={styles.button} to={`/travel/${viaggio.id}`}>Dettaglio</Link>
+
         </div>
       ))}
     </div>
