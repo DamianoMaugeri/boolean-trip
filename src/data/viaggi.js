@@ -1,5 +1,6 @@
 const viaggi = [
   {
+    id: 1,
     destinazione: "Roma",
     dataPartenza: "2025-03-15",
     dataRitorno: "2025-03-22",
@@ -43,6 +44,7 @@ const viaggi = [
     ],
   },
   {
+    id: 2,
     destinazione: "Parigi",
     dataPartenza: "2025-04-10",
     dataRitorno: "2025-04-17",
@@ -86,6 +88,7 @@ const viaggi = [
     ],
   },
   {
+    id: 3,
     destinazione: "New York",
     dataPartenza: "2025-05-05",
     dataRitorno: "2025-05-12",
@@ -129,6 +132,7 @@ const viaggi = [
     ],
   },
   {
+    id: 4,
     destinazione: "Tokyo",
     dataPartenza: "2025-06-15",
     dataRitorno: "2025-06-22",

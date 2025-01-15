@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route>
             <Route index element={<MainPage />} />
-            <Route path='/tavel/:id' element={<ShowPage />} />
+            <Route path='/travel/:id' element={<ShowPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
