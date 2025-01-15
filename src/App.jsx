@@ -2,15 +2,23 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import MainPage from './pages/MainPage/MainPage'
+import ShowPage from './pages/ShowPage/ShowPage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        app
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route>
+            <Route index element={<MainPage />} />
+            <Route path='/tavel/:id' element={<ShowPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
     </>
   )
 }
