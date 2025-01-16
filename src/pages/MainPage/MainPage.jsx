@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TravelList from "../../components/TravelList";
-import Searchbar from "../../components/Searchbar";
+import Header from "../../components/Header";
 import viaggi from "../../data/viaggi";
 
 export default function MainPage() {
@@ -12,7 +12,7 @@ export default function MainPage() {
 
   return (
     <div>
-      <Searchbar onSearch={handleSearch} />
+      <Header onSearch={handleSearch} />
       <TravelList viaggi={filteredViaggi} />
     </div>
   );
