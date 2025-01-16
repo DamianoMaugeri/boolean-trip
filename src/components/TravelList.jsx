@@ -1,8 +1,7 @@
 import React from "react";
-import viaggi from "../data/viaggi";
 import { Link } from "react-router-dom";
 
-export default function TravelList() {
+export default function TravelList({ viaggi }) {
   return (
     <div className="container my-4">
       <div className="row">
