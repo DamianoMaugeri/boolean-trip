@@ -11,7 +11,7 @@ export default function MainPage() {
   };
 
   return (
-    <div>
+    <div className="bg-travel-list">
       <Header onSearch={handleSearch} />
       <TravelList viaggi={filteredViaggi} />
     </div>
