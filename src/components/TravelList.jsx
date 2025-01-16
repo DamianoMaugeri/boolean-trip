@@ -4,18 +4,15 @@ import viaggi from "../data/viaggi";
 import { Link } from "react-router-dom";
 
 export default function TravelList() {
-  function handleButtonClick(idViaggio) {
-
-  }
 
   return (
     <div className={styles.container}>
       {viaggi.map((viaggio, index) => (
-        <div 
-          key={index} 
+        <div
+          key={index}
           className={styles.card}
           style={{ backgroundImage: `url(${viaggio.immagine})` }}
-          >
+        >
 
           <h2>{viaggio.destinazione}</h2>
 
