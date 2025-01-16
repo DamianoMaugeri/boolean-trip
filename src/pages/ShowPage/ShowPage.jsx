@@ -1,5 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import viaggi from "../../data/viaggi";
+import Accordion from 'react-bootstrap/Accordion';
+import ParticipantCard from "../../components/ParticipantCard";
 
 export default function ShowPage() {
     const { id } = useParams();
@@ -13,16 +15,25 @@ export default function ShowPage() {
                     <p>{viaggioFiltrato[0].descrizione}</p>
                     <Link to={"/"}>Torna ai viaggi</Link>
                     <h2>Partecipanti:</h2>
-                    <ul>
-                        {viaggioFiltrato[0].partecipanti.map((partecipante, i) => (
-                            <li key={i}>
-                                <p><strong>Nome:</strong> {partecipante.nome} {partecipante.cognome}</p>
-                                <p><strong>Codice Fiscale:</strong> {partecipante.codiceFiscale}</p>
-                                <p><strong>Telefono:</strong> {partecipante.telefono}</p>
-                                <p><strong>Email:</strong> {partecipante.email}</p>
-                            </li>
+
+                    <Accordion>
+                        {viaggioFiltrato[0].partecipanti.map((partecipante, index) => (
+                            <Accordion.Item eventKey={index.toString()} key={index}>
+                            <Accordion.Header>
+                                {partecipante.nome} {partecipante.cognome}
+                            </Accordion.Header>
+                            <Accordion.Body>
+                            <ParticipantCard
+                                nome={partecipante.nome}
+                                cognome={partecipante.cognome}
+                                email={partecipante.email}
+                                telefono={partecipante.telefono}
+                                codiceFiscale={partecipante.codiceFiscale}
+                            />
+                            </Accordion.Body>
+                            </Accordion.Item>
                         ))}
-                    </ul>
+                    </Accordion>
                 </div>
             ) : (
                 <p>Viaggio non trovato</p>
