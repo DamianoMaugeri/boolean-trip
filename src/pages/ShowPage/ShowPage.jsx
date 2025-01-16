@@ -13,7 +13,7 @@ export default function ShowPage() {
                 <div>
                     <h1 className="mt-2">{viaggioFiltrato[0].destinazione}</h1>
                     <p className="mb-3">{viaggioFiltrato[0].descrizione}</p>
-                    <Link to={"/"}  className="btn btn-secondary mb-4">
+                    <Link to={"/"}  className="btn btn-primary mb-4">
                     Torna ai viaggi
                     </Link>
 

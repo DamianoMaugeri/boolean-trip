@@ -28,9 +28,7 @@ export default function TravelList() {
             </p>
             <p>{viaggio.descrizione}</p>
           </div>
-
           <Link className={styles.button} to={`/travel/${viaggio.id}`}>Dettaglio</Link>
-
         </div>
       ))}
     </div>
