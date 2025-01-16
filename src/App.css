@@ -1,9 +1,52 @@
 :root{
-    --main-color: #007BA7;
+--main-color: #007BA7;
     --card-background-color: #005f7a;
+    --button-background-color: yellowgreen;
+    --button-text-color: white;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.bg-header{
+    background-color: var(--main-color);
+    color: white;
 }
 
 .bg-travel-list{
     background-color: var(--card-background-color);
     color: white;
+    min-height: 100vh;
+}
+
+body{
+    height: 100vh;
+}
+
+.fixed-button {
+    text-decoration: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+.fixed-button:hover {
+    background-color: darkgreen;
+}
+
+
+.container-show{
+    max-width: 1000px;
+    margin: 0 auto;
 }
