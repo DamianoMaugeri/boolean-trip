@@ -8,17 +8,26 @@ export default function ShowPage() {
     const viaggioFiltrato = viaggi.filter((el) => el.id === parseInt(id));
 
     return (
-        <div>
+        <div className="mb-4 w-75 mx-auto rounded">
             {viaggioFiltrato.length > 0 ? (
                 <div>
-                    <h1>{viaggioFiltrato[0].destinazione}</h1>
-                    <p>{viaggioFiltrato[0].descrizione}</p>
-                    <Link to={"/"}>Torna ai viaggi</Link>
-                    <h2>Partecipanti:</h2>
+                    <h1 className="mt-2">{viaggioFiltrato[0].destinazione}</h1>
+                    <p className="mb-3">{viaggioFiltrato[0].descrizione}</p>
+                    <Link to={"/"}  className="btn btn-primary mb-4">
+                    Torna ai viaggi
+                    </Link>
 
-                    <Accordion>
+                    <h2 className="mb-2">Partecipanti:</h2>
+
+                    <Accordion className="mb-4 rounded">
                         {viaggioFiltrato[0].partecipanti.map((partecipante, index) => (
-                            <Accordion.Item eventKey={index.toString()} key={index}>
+
+                            <Accordion.Item 
+                            eventKey={index.toString()} 
+                            key={index}
+                            className="rounded mb-1"
+                            >
+
                             <Accordion.Header>
                                 {partecipante.nome} {partecipante.cognome}
                             </Accordion.Header>

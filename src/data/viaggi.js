@@ -42,6 +42,7 @@ const viaggi = [
         email: "elena.neri@example.com",
       },
     ],
+     immagine: "/images/rome.jpg"
   },
   {
     id: 2,
@@ -86,6 +87,7 @@ const viaggi = [
         email: "roberto.giallo@example.com",
       },
     ],
+    immagine: "/images/parigi.jpg"
   },
   {
     id: 3,
@@ -130,6 +132,7 @@ const viaggi = [
         email: "roberto.marrone@example.com",
       },
     ],
+    immagine: "/images/newyork.jpg"
   },
   {
     id: 4,
@@ -174,6 +177,7 @@ const viaggi = [
         email: "giulia.grigio@example.com",
       },
     ],
+    immagine: "/images/tokyo.jpg"
   },
 ];
 
