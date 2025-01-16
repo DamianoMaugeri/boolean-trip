@@ -12,20 +12,28 @@ export default function ShowPage() {
 
     const [viaggioFiltrato, setViaggioFiltrato] = useState(arrViaggioFiltrato[0])
 
+    const [isActive, setIsActive] = useState(false)
+
     function addPartecipante(n) {
         setViaggioFiltrato((prevState) => ({
             ...prevState,
             partecipanti: [...prevState.partecipanti, n]
 
         }))
+        setIsActive(false)
 
+    }
+
+    function toggleActive() {
+
+        setIsActive(!isActive)
     }
 
 
     return (
         <div className="bg-travel-list">
             {arrViaggioFiltrato.length > 0 ? (
-                <div>
+                <div className="">
                     <div className="bg-header py-3 text-center">
                         <div>
                             <h1 className="m-2 fw-semibold">
@@ -63,7 +71,13 @@ export default function ShowPage() {
                                 ))}
                             </Accordion>
 
-                            <FormPartecipanti viaggio={viaggioFiltrato} callback={addPartecipante} />
+                            {isActive ? <button onClick={toggleActive}>-</button>
+                                : <button onClick={toggleActive}>+</button>}
+
+                            {
+                                isActive && <FormPartecipanti viaggio={viaggioFiltrato} callback={addPartecipante} />
+                            }
+
 
                         </div>
                     </section>
