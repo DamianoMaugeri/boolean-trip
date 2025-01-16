@@ -13,13 +13,6 @@ const Searchbar = ({ onSearch }) => {
     onSearch(results);
   };
 
-  const buttonClick = () => {
-    const results = viaggi.filter((viaggio) =>
-      viaggio.destinazione.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    onSearch(results);
-  };
-
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", marginTop: "20px" }}>
       <input
