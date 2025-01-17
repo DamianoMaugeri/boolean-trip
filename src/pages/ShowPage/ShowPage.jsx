@@ -14,13 +14,30 @@ export default function ShowPage() {
 
     const [isActive, setIsActive] = useState(false)
 
+    const [partecipantiFiltrati, setPartecipantiFiltrati] = useState(viaggioFiltrato.partecipanti)
+
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleChange = (event) => {
+        const term = event.target.value;
+        setSearchTerm(term);
+        const results = viaggioFiltrato.partecipanti.filter((partecipante) =>
+            partecipante.nome.toLowerCase().includes(term.toLowerCase()) || partecipante.cognome.toLowerCase().includes(term.toLowerCase())
+        );
+        setPartecipantiFiltrati(results);
+
+    };
+
     function addPartecipante(n) {
         setViaggioFiltrato((prevState) => ({
             ...prevState,
             partecipanti: [...prevState.partecipanti, n]
 
         }))
+        console.log(viaggioFiltrato.partecipanti)
+        setPartecipantiFiltrati([...viaggioFiltrato.partecipanti, n])
         setIsActive(false)
+        setSearchTerm("")
 
     }
 
@@ -47,9 +64,12 @@ export default function ShowPage() {
                     </Link>
                     <section className="container-show">
                         <div className="container-show">
-                            <h2 className="my-4">Partecipanti:</h2>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <h2 className="my-4">Partecipanti:</h2>
+                                <input className="rounded" value={searchTerm} onChange={handleChange} type="text" placeholder="Cerca partecipanti..." />
+                            </div>
                             <Accordion className="my-4 rounded">
-                                {viaggioFiltrato.partecipanti.map((partecipante, index) => (
+                                {partecipantiFiltrati.map((partecipante, index) => (
                                     <Accordion.Item
                                         eventKey={index.toString()}
                                         key={index}
